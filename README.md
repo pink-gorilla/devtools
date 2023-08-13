@@ -2,5 +2,9 @@
 
 **End Users** this project is not for you.
 
+
+Devtools uses reval.
+It provides repl and notebook-viewer
+and an ui to a goldly-build.
 .
 
