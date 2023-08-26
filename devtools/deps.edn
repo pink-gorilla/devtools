@@ -1,7 +1,7 @@
 {:paths ["src"
          "resources" ; extension , resources used in devtools ui
          ]
- :deps {org.pinkgorilla/reval {:mvn/version "0.5.133"} ; repl + notebook viewer, brings scratchpad + pinkie
+ :deps {org.pinkgorilla/reval {:mvn/version "0.5.134"} ; repl + notebook viewer, brings scratchpad + pinkie
         org.pinkgorilla/scratchpad {:mvn/version "0.0.15"}
         org.pinkgorilla/ui-repl {:mvn/version "0.0.64"} ; reagent, format, page-nav,...
         org.pinkgorilla/ui-site {:mvn/version "0.0.20"} ; menu in devtools
