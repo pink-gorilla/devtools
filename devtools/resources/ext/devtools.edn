@@ -4,4 +4,17 @@
  :lazy-sci false
  :cljs-namespace []
  ; run
- :autoload-cljs-dir ["goldly/devtools/page"]}
+ :autoload-cljs-dir ["goldly/devtools/page"]
+ :cljs-routes  {;devtools
+               "devtools/help" :devtools
+               "devtools/pages" :pages
+               "devtools/build" :build
+               "devtools/runtime" :runtime
+               "devtools/theme" :theme
+               ; reval
+               "devtools/repl" :repl
+               "devtools/viewer" :viewer
+               ; scratchpad
+               "devtools/scratchpad" :scratchpad}
+ 
+ }
