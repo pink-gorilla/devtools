@@ -86,5 +86,5 @@
    [artefacts "goldly extensions" goldly-extensions]
    [artefacts "notebook (legacy)" notebook-legacy]])
 
-(add-page-template devtools-page :devtools)
+(add-page-template devtools-page 'goldly.devtools.page.help/devtools-page)
 
