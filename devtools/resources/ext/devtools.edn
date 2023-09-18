@@ -10,11 +10,7 @@
                 "devtools/pages" goldly.devtools.page.page-list/page-list-page
                 "devtools/build" goldly.devtools.page.build/build-page
                 "devtools/runtime" goldly.devtools.page.runtime/runtime-page
-                "devtools/theme" goldly.devtools.page.theme/theme-page
-               ; reval
-               ; "devtools/repl" :repl
-               ; "devtools/viewer" :viewer
-               } 
+                "devtools/theme" goldly.devtools.page.theme/theme-page} 
  :sci-cljs-ns [; lib
                goldly.devtools.ui-helper
                goldly.devtools.url-loader
