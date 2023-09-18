@@ -69,9 +69,9 @@
   [site/header-menu
    {:brand "Application"
     :brand-link "/"
-    :items [{:text "scratchpad"  :dispatch [:bidi/goto :scratchpad]}  ; :link "/devtools/scratchpad"
-            {:text "repl"  :dispatch [:bidi/goto :repl]}
-            {:text "notebooks" :dispatch [:bidi/goto :viewer :query-params {}]} ;  :link "/devtools/viewer"
+    :items [{:text "scratchpad"  :dispatch [:bidi/goto 'scratchpad.page.scratchpad/scratchpad]}  ; :link "/devtools/scratchpad"
+            {:text "repl"  :dispatch [:bidi/goto 'reval.goldly.page.repl/repl]}
+            {:text "notebooks" :dispatch [:bidi/goto 'reval.goldly.page.notebook-viewer/viewer-page :query-params {}]} ;  :link "/devtools/viewer"
             {:text "theme"  :dispatch [:bidi/goto 'goldly.devtools.page.theme/theme-page]} ;  :link "/devtools/theme"
             {:text "build"  :dispatch  [:bidi/goto 'goldly.devtools.page.build/build-page]}
             {:text "runtime"  :dispatch  [:bidi/goto 'goldly.devtools.page.runtime/runtime-page]}

@@ -5,8 +5,7 @@
  :cljs-namespace []
  ; run
  ;:autoload-cljs-dir ["goldly/devtools/page"]
- :cljs-routes  {;devtools
-                "devtools/help"  goldly.devtools.page.help/devtools-page
+ :cljs-routes  {"devtools/help"  goldly.devtools.page.help/devtools-page
                 "devtools/pages" goldly.devtools.page.page-list/page-list-page
                 "devtools/build" goldly.devtools.page.build/build-page
                 "devtools/runtime" goldly.devtools.page.runtime/runtime-page
