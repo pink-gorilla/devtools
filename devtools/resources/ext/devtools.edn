@@ -4,17 +4,27 @@
  :lazy-sci false
  :cljs-namespace []
  ; run
- :autoload-cljs-dir ["goldly/devtools/page"]
+ ;:autoload-cljs-dir ["goldly/devtools/page"]
  :cljs-routes  {;devtools
-               "devtools/help"  goldly.devtools.page.help/devtools-page
-               "devtools/pages" goldly.devtools.page.page-list/page-list-page
-               "devtools/build" :build
-               "devtools/runtime" :runtime
-               "devtools/theme" :theme
+                "devtools/help"  goldly.devtools.page.help/devtools-page
+                "devtools/pages" goldly.devtools.page.page-list/page-list-page
+                "devtools/build" goldly.devtools.page.build/build-page
+                "devtools/runtime" goldly.devtools.page.runtime/runtime-page
+                "devtools/theme" goldly.devtools.page.theme/theme-page
                ; reval
-               "devtools/repl" :repl
-               "devtools/viewer" :viewer
-               ; scratchpad
-               "devtools/scratchpad" :scratchpad}
- 
+               ; "devtools/repl" :repl
+               ; "devtools/viewer" :viewer
+               } 
+ :sci-cljs-ns [; lib
+               goldly.devtools.ui-helper
+               goldly.devtools.url-loader
+               goldly.devtools.visspec2
+               goldly.devtools.websocket
+               ; pages
+               goldly.devtools.page.build
+               goldly.devtools.page.help
+               goldly.devtools.page.page-list
+               goldly.devtools.page.runtime
+               goldly.devtools.page.theme]
+
  }

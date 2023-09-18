@@ -3,8 +3,7 @@
    [clojure.string :refer [split join]]
    [re-frame.core :as rf]
    [site]
-   [layout]
-   [goldly.page :as page]))
+   [layout]))
 
 ;; comes from pinkie
 ;; but we need more customization!
@@ -73,19 +72,18 @@
     :items [{:text "scratchpad"  :dispatch [:bidi/goto :scratchpad]}  ; :link "/devtools/scratchpad"
             {:text "repl"  :dispatch [:bidi/goto :repl]}
             {:text "notebooks" :dispatch [:bidi/goto :viewer :query-params {}]} ;  :link "/devtools/viewer"
-            {:text "theme"  :dispatch [:bidi/goto :theme]} ;  :link "/devtools/theme"
-            {:text "build"  :dispatch  [:bidi/goto :build]}
-            {:text "runtime"  :dispatch  [:bidi/goto :runtime]}
-            {:text "pages"  :dispatch [:bidi/goto :pages]}  ; :link "/devtools/pages"
-            {:text "help"  :dispatch [:bidi/goto :devtools]}  ; :link "/devtools"
+            {:text "theme"  :dispatch [:bidi/goto 'goldly.devtools.page.theme/theme-page]} ;  :link "/devtools/theme"
+            {:text "build"  :dispatch  [:bidi/goto 'goldly.devtools.page.build/build-page]}
+            {:text "runtime"  :dispatch  [:bidi/goto 'goldly.devtools.page.runtime/runtime-page]}
+            {:text "pages"  :dispatch [:bidi/goto 'goldly.devtools.page.page-list/page-list-page]}  ; :link "/devtools/pages"
+            {:text "help"  :dispatch [:bidi/goto 'goldly.devtools.page.help/devtools-page]}
             {:text "feedback" :link "https://github.com/pink-gorilla/goldly/issues" :special? true}]}])
 
-(defn add-page-template [page name]
-  (let [wrapped-page (fn [route]
-                       [layout/header-main  ; .w-screen.h-screen
-                        [devtools-header]
-                        [page route]])]
-    (page/add wrapped-page name)))
+(defn wrap-template [page]
+  (fn [route]
+    [layout/header-main  ; .w-screen.h-screen
+     [devtools-header]
+     [page route]]))
 
 ;; styling
 

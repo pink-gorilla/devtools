@@ -1,7 +1,7 @@
 (ns goldly.devtools.page.build
   (:require
    [goldly.devtools.url-loader :refer [url-loader]]
-   [goldly.devtools.ui-helper :refer [add-page-template]]))
+   [goldly.devtools.ui-helper :refer [wrap-template]]))
 
 (defn goldly-version [{:keys [version generated-at]}]
   [:div "goldly version: " version " " generated-at
@@ -75,4 +75,4 @@
   [:div.bg-green-300
    [build]])
 
-(add-page-template build-page :build)
+(def build-page (wrap-template build-page))

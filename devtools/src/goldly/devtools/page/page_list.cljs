@@ -23,8 +23,7 @@
        ;[:span.text-xl.text-blue-500.text-bold.mr-4 (str page)]
        ;[:p (pr-str r)]
        ;(page/show r)
-       [:div "error: page/show currently disabled in ui.bidi"]
-       ])
+       [:div "error: page/show currently disabled in ui.bidi"]])
     [:div.mt-6
      [:span.text-xl.text-blue-500.text-bold.mr-4 "page: " "please select a page"]]))
 
@@ -56,4 +55,3 @@
             [devtools-header]
             [page-list p]])]))))
 
-(page/add page-list-page 'goldly.devtools.page.page-list/page-list-page)

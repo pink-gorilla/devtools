@@ -2,7 +2,7 @@
   (:require
    [re-frame.core :as rf]
    [goldly :refer [eventhandler]]
-   [goldly.devtools.ui-helper :refer [add-page-template]]))
+   [goldly.devtools.ui-helper :refer [wrap-template]]))
 
 ;; css links
 (defn show-css-links [css-links]
@@ -51,4 +51,4 @@
   [:div.container.mx-auto ; tailwind containers are not centered by default; mx-auto does this
    [theme-info]])
 
-(add-page-template theme-page :theme)
+(def theme-page (wrap-template theme-page))

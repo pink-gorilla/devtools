@@ -4,7 +4,7 @@
    [goldly.page :as page]
    [ui.frisk :refer [frisk]]
    [goldly.devtools.url-loader :refer [url-loader]]
-   [goldly.devtools.ui-helper :refer [add-page-template]]))
+   [goldly.devtools.ui-helper :refer [wrap-template]]))
 
 (defn kw-item [t]
   [:p.m-1 (pr-str t)])
@@ -81,6 +81,6 @@
   [:div.bg-green-300
    [runtime]])
 
-(add-page-template runtime-page :runtime)
+(def runtime-page (wrap-template runtime-page))
 
 

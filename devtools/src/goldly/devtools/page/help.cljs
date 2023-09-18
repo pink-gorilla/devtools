@@ -1,7 +1,7 @@
 (ns goldly.devtools.page.help
   (:require
    [goog.string :refer [format]]
-   [goldly.devtools.ui-helper :refer [add-page-template h1]]))
+   [goldly.devtools.ui-helper :refer [wrap-template h1]]))
 
 ; artefacts
 
@@ -86,5 +86,4 @@
    [artefacts "goldly extensions" goldly-extensions]
    [artefacts "notebook (legacy)" notebook-legacy]])
 
-(add-page-template devtools-page 'goldly.devtools.page.help/devtools-page)
-
+(def devtools-page (wrap-template devtools-page))
