@@ -8,3 +8,11 @@ It provides repl and notebook-viewer
 and an ui to a goldly-build.
 .
 
+## development demo
+
+```
+clj -X:demo:npm-install
+clj -X:demo:compile
+clj -X:demo
+
+```

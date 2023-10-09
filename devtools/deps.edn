@@ -1,7 +1,7 @@
 {:paths ["src"
          "resources" ; extension , resources used in devtools ui
          ]
- :deps {org.pinkgorilla/reval {:mvn/version "0.5.139"} ; repl + notebook viewer, brings scratchpad + pinkie
+ :deps {org.pinkgorilla/reval {:mvn/version "0.5.140"} ; repl + notebook viewer, brings scratchpad + pinkie
         org.pinkgorilla/scratchpad {:mvn/version "0.0.19"}
         org.pinkgorilla/ui-repl {:mvn/version "0.0.72"} ; reagent, format, page-nav,...
         org.pinkgorilla/ui-site {:mvn/version "0.0.20"} ; menu in devtools
@@ -51,6 +51,25 @@
                  io.github.seancorfield/build-clj {:git/tag "v0.5.4" :git/sha "bc9c0cc"}
                  babashka/fs {:mvn/version "0.0.5"}}
           :ns-default build}
+  
+   ; demo
+  :demo
+  {:extra-deps {org.pinkgorilla/goldly {:mvn/version "0.4.624"}
+                nrepl/nrepl {:mvn/version "0.9.0"}
+                cider/cider-nrepl {:mvn/version "0.28.3"}}
+   :exec-fn modular.system/start!
+   :exec-args {:profile "jetty"
+               :config ["webly/config.edn"
+                        "goldly/config.edn"]
+               :services "goldly/services.edn"}}
+
+  :npm-install
+  {:exec-fn goldly.app.build/goldly-build
+   :exec-args {:profile "npm-install"}}
+
+  :compile
+  {:exec-fn goldly.app.build/goldly-build
+   :exec-args {:profile "compile2"}}
 
 ;           
   }}
