@@ -6,10 +6,6 @@ pom.xml.asc
 /classes/
 /target/
 /checkouts/
-.lein-deps-sum
-.lein-repl-history
-.lein-plugins/
-.lein-failures
 .nrepl-port
 .cpcache/
 /test/creds.edn
@@ -38,5 +34,4 @@ creds-localhost.edn
 \#*\#
 .\#*
 .~*
-goldly_bindings_generated.cljs
 karma.conf.js

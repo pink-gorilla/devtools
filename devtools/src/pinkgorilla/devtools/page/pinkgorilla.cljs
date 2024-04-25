@@ -1,7 +1,7 @@
-(ns goldly.devtools.page.help
+(ns pinkgorilla.devtools.page.pinkgorilla
   (:require
    [goog.string :refer [format]]
-   [goldly.devtools.ui-helper :refer [wrap-template h1]]))
+   [pinkgorilla.devtools.ui-helper :refer [h1]]))
 
 ; artefacts
 
@@ -63,9 +63,9 @@
    (into [:div]
          (map project list))])
 
-(defn devtools-page [{:keys [route-params query-params handler] :as route}]
-  [:div ; .w-screen.h-screen
-   [h1 "goldly devtools"]
+(defn pinkgorilla-page [{:keys [route-params query-params handler] :as route}]
+  [:div
+   [h1 "devtools"]
    [:div.mb-5]
    ; this mp3 is too big for clojars
    ;[:audio {:src "/r/daddys-outta-town.mp3"
@@ -73,7 +73,7 @@
    ;         :auto-play true
    ;         :loop true
    ;         :preload "auto"}]
-   [h1 "What is goldly"]
+   [h1 "What is pink-gorilla?"]
    [:ul
     [:li "Can run clj code in the browser. This is done via sci interpreter."]
     [:li "Via hiccup-fh (functional hiccup) new render functions can be executed from clj."]
@@ -85,5 +85,3 @@
    [artefacts "build tools" build-tool]
    [artefacts "goldly extensions" goldly-extensions]
    [artefacts "notebook (legacy)" notebook-legacy]])
-
-(def devtools-page (wrap-template devtools-page))

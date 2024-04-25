@@ -1,25 +1,25 @@
 {:name "devtools"
  ; build
- :lazy false
- :lazy-sci false
- :cljs-namespace []
+ :lazy true
+ :depends-on #{:ui-site}
+ :cljs-namespace [pinkgorilla.devtools.core
+                  pinkgorilla.devtools.init
+                  ; dev-pages
+                  pinkgorilla.devtools.page.pinkgorilla
+                  pinkgorilla.devtools.page.theme]
+ :cljs-ns-bindings {'pinkgorilla.devtools.core {'devtools-page pinkgorilla.devtools.core/devtools-page}
+                    'pinkgorilla.devtools.init {'start-devpages pinkgorilla.devtools.init/start-devpages}
+                    ; dev-pages
+                    'pinkgorilla.devtools.page.pinkgorilla {'pinkgorilla-page pinkgorilla.devtools.page.pinkgorilla/pinkgorilla-page}
+                    'pinkgorilla.devtools.page.theme {'theme-page pinkgorilla.devtools.page.theme/theme-page}
+                    }
  ; run
- :cljs-routes  {"devtools" {""  goldly.devtools.page.help/devtools-page
-                            "/help"  goldly.devtools.page.help/devtools-page
-                            "/pages" goldly.devtools.page.page-list/page-list-page
-                            "/build" goldly.devtools.page.build/build-page
-                            "/runtime" goldly.devtools.page.runtime/runtime-page
-                            "/theme" goldly.devtools.page.theme/theme-page}}
- :sci-cljs-ns [; lib
-               goldly.devtools.ui-helper
-               goldly.devtools.url-loader
-               goldly.devtools.visspec2
-               goldly.devtools.websocket
-               ; pages
-               goldly.devtools.page.build
-               goldly.devtools.page.help
-               goldly.devtools.page.page-list
-               goldly.devtools.page.runtime
-               goldly.devtools.page.theme]
+ :cljs-routes  {["dev/" :name] pinkgorilla.devtools.core/devtools-page
+                "dev" pinkgorilla.devtools.core/devtools-page}
+ :cljs-service {:start-fn pinkgorilla.devtools.init/start-devpages
+                :config-fn pinkgorilla.devtools.core/config-dev}
+ :dev-page {"pinkgorilla" pinkgorilla.devtools.page.pinkgorilla/pinkgorilla-page
+            "theme" pinkgorilla.devtools.page.theme/theme-page}
+  
 
  }

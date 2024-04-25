@@ -11,8 +11,8 @@ and an ui to a goldly-build.
 ## development demo
 
 ```
-clj -X:demo:npm-install
-clj -X:demo:compile
-clj -X:demo
+clj -X:webly:npm-install
+clj -X:webly:compile
+clj -X:webly:run
 
 ```
