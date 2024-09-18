@@ -1,5 +1,5 @@
 {:paths ["src" "resources"]
- :deps {org.pinkgorilla/ui-repl {:mvn/version "0.1.105"} ; reagent, format, page-nav,...
+ :deps {org.pinkgorilla/ui-repl {:mvn/version "0.1.108"}; reagent, format, page-nav,...
         org.pinkgorilla/ui-site {:mvn/version "0.0.31"} ; menu in devtools
         }
 
